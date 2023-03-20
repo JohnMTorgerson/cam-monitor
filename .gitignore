@@ -4,3 +4,5 @@ __pycache__/
 other/
 logs/*
 .env
+overlay.png
+overlay.py

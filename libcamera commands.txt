@@ -1,0 +1,1 @@
+DISPLAY=:0 libcamera-hello -t 0 --vflip --hflip --info-text "#%frame (%fps fps) exp %exp ag %ag dg %dg" --viewfinder-width 2028 --viewfinder-height 1140 --gain 100 --brightness .8 --contrast 2.5 -f

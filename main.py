@@ -4,7 +4,7 @@ from picamera2 import Picamera2, Preview
 from pprint import pprint
 
 def main() :
-    tuning = Picamera2.load_tuning_file("imx477.json")
+    # tuning = Picamera2.load_tuning_file("imx477.json")
     # pprint(tuning)
 
     # algo = Picamera2.find_tuning_algo(tuning, "rpi.agc")
@@ -25,8 +25,9 @@ def main() :
 
     tuning = Picamera2.load_tuning_file("imx477.json")
     algo = Picamera2.find_tuning_algo(tuning, "rpi.agc")
-    algo["exposure_modes"]["normal"] = {"shutter": [100, 10000, 30000, 70000], "gain": [1.0, 2.0, 4.0, 200.0]}
-
+    # pprint(algo)
+    algo["channels"][0]["exposure_modes"]["normal"] = {"shutter": [100, 10000, 30000, 70000], "gain": [1.0, 2.0, 4.0, 200.0]}
+    # pprint(algo)
 
     cam = Picamera2(tuning=tuning)
     cam.start_preview(Preview.QTGL)
